@@ -28,6 +28,7 @@ object galvan {
 	method totalDinero(){ return dinero}
 }
 
+
 object baigorria {
 	var cantidadEmpanadasVendidas = 100
 	var montoPorEmpanada = 15
