@@ -12,23 +12,17 @@ object galvan {
 	method cobrarSueldo(){	/* si gana más que su deuda, descuenta y ahorra */
 		if(sueldo > deuda){
 			dinero = sueldo - deuda 
-			deuda =0
 		}
-		else{/* si no descuenta la deuda */
-			deuda -= sueldo
-		}
+		deuda = 0.max(deuda- sueldo)
 	}
 	method totalCobrado(){	}
 	method gastar(cuanto){	
 		var gasto = cuanto
 		if (dinero < gasto){
 			gasto -= dinero
-			dinero = 0
 			deuda += gasto
 		}
-		else{
-			dinero -= gasto
-		}
+		dinero = 0.max(dinero-cuanto)
 	} 
 	method totalDeuda(){ return deuda} 
 	method totalDinero(){ return dinero}
