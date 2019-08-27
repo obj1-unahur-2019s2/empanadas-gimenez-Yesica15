@@ -28,17 +28,21 @@ object galvan {
 	method totalDinero(){ return dinero}
 }
 
-
 object baigorria {
 	var cantidadEmpanadasVendidas = 100
 	var montoPorEmpanada = 15
+	var dinero = 0
 	var totalCobrado = 0
 	
 	method venderEmpanada() { cantidadEmpanadasVendidas += 1}
  	
 	method sueldo() = cantidadEmpanadasVendidas * montoPorEmpanada
-	method cobrarSueldo(){	totalCobrado += self.sueldo()}
+	method cobrarSueldo(){	
+		dinero += self.sueldo()
+		totalCobrado += self.sueldo()
+	}
 	method totalCobrado(){ return totalCobrado}
+	method totalDinero(){ return dinero}
 }
 
 object gimenez {
